@@ -30,593 +30,173 @@
   --text-muted: #5F5E5A;
   --text-hint: #888780;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  color: var(--text-dark);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* ── NAV ── */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--cream);
-  border-bottom: 1px solid var(--warm-gray);
-  padding: 0 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-}
-
-.nav-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  color: var(--moss);
-  letter-spacing: .01em;
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--text-muted);
-  text-decoration: none;
-  letter-spacing: .04em;
-  text-transform: lowercase;
-  transition: color .2s;
-  position: relative;
-  padding-bottom: 2px;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1.5px;
-  background: var(--moss-light);
-  transition: width .25s ease;
-}
-
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); font-size: 16px; line-height: 1.6; }
+nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid var(--warm-gray); padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.nav-name { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--moss); letter-spacing: .01em; text-decoration: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 13px; font-weight: 400; color: var(--text-muted); text-decoration: none; letter-spacing: .04em; text-transform: lowercase; transition: color .2s; position: relative; padding-bottom: 2px; }
+.nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: var(--moss-light); transition: width .25s ease; }
 .nav-links a:hover { color: var(--moss); }
 .nav-links a:hover::after { width: 100%; }
 .nav-links a.active { color: var(--moss); font-weight: 500; }
 .nav-links a.active::after { width: 100%; }
-
-/* ── PAGES ── */
 .page { display: none; animation: fadeIn .3s ease; }
 .page.active { display: block; }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ── HERO ── */
-.hero {
-  padding: 5rem 2.5rem 4rem;
-  max-width: 860px;
-  border-bottom: 1px solid var(--warm-gray);
-}
-
-.hero-location {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--terra);
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.hero-location::before {
-  content: '';
-  display: inline-block;
-  width: 18px;
-  height: 1px;
-  background: var(--terra-mid);
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--moss);
-  max-width: 640px;
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: var(--terra);
-}
-
-.hero-bio {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--text-mid);
-  max-width: 580px;
-  margin-bottom: 2rem;
-}
-
-.hero-bio em {
-  font-style: italic;
-  color: var(--moss-light);
-}
-
-.pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 2.5rem;
-}
-
-.pill {
-  font-size: 12px;
-  padding: 5px 14px;
-  border-radius: 20px;
-  letter-spacing: .02em;
-}
-
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.section { padding: 3rem 2.5rem; border-bottom: 1px solid var(--warm-gray); max-width: 900px; }
+.section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1.75rem; display: flex; align-items: center; gap: 8px; }
+.section-eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--warm-gray); max-width: 60px; }
+.btn { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; padding: 10px 22px; border-radius: 6px; cursor: pointer; letter-spacing: .03em; transition: all .2s; text-decoration: none; display: inline-block; border: 1px solid; }
+.btn-moss { background: var(--moss); color: var(--green-pale); border-color: var(--moss); }
+.btn-moss:hover { background: var(--moss-light); border-color: var(--moss-light); }
+.btn-outline-moss { background: transparent; color: var(--moss-light); border-color: var(--moss-light); }
+.btn-outline-moss:hover { background: var(--green-pale); }
+.btn-outline-fox { background: transparent; color: var(--fox-dark); border-color: var(--fox); }
+.btn-outline-fox:hover { background: var(--fox-pale); }
+.hero { padding: 5rem 2.5rem 4rem; max-width: 900px; border-bottom: 1px solid var(--warm-gray); }
+.hero-location { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 6px; }
+.hero-location::before { content: ''; display: inline-block; width: 18px; height: 1px; background: var(--terra-mid); }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 400; line-height: 1.2; color: var(--moss); max-width: 640px; margin-bottom: 1.5rem; }
+.hero h1 em { font-style: italic; color: var(--terra); }
+.hero-bio { font-size: 16px; line-height: 1.8; color: var(--text-mid); max-width: 580px; margin-bottom: 2rem; }
+.hero-bio em { font-style: italic; color: var(--moss-light); }
+.pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; }
+.pill { font-size: 12px; padding: 5px 14px; border-radius: 20px; letter-spacing: .02em; }
 .pill-green { background: var(--green-pale); border: 1px solid var(--green-mid); color: var(--moss-light); }
 .pill-terra { background: var(--terra-pale); border: 1px solid var(--terra-border); color: var(--terra); }
 .pill-fox { background: var(--fox-pale); border: 1px solid var(--fox-border); color: var(--fox-dark); }
 .pill-gray { background: var(--cream-dark); border: 1px solid var(--warm-gray); color: var(--text-muted); }
-
 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
-
-.btn {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 10px 22px;
-  border-radius: 6px;
-  cursor: pointer;
-  letter-spacing: .03em;
-  transition: all .2s;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.btn-moss {
-  background: var(--moss);
-  color: var(--green-pale);
-  border: 1px solid var(--moss);
-}
-.btn-moss:hover { background: var(--moss-light); border-color: var(--moss-light); }
-
-.btn-outline-moss {
-  background: transparent;
-  color: var(--moss-light);
-  border: 1px solid var(--moss-light);
-}
-.btn-outline-moss:hover { background: var(--green-pale); }
-
-.btn-outline-fox {
-  background: transparent;
-  color: var(--fox-dark);
-  border: 1px solid var(--fox);
-}
-.btn-outline-fox:hover { background: var(--fox-pale); }
-
-/* ── CURRENTLY SECTION ── */
-.section {
-  padding: 3rem 2.5rem;
-  border-bottom: 1px solid var(--warm-gray);
-  max-width: 860px;
-}
-
-.section-eyebrow {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--terra);
-  margin-bottom: 1.75rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.section-eyebrow::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--warm-gray);
-  max-width: 60px;
-}
-
-.currently-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.currently-card {
-  border-radius: 10px;
-  padding: 1.25rem;
-  border: 1px solid;
-}
-
-.currently-card.terra {
-  background: var(--terra-pale);
-  border-color: var(--terra-border);
-}
-.currently-card.fox {
-  background: var(--fox-pale);
-  border-color: var(--fox-border);
-}
-.currently-card.green {
-  background: var(--green-pale);
-  border-color: var(--green-mid);
-}
-
-.card-label {
-  font-size: 10px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin-bottom: 8px;
-}
-
+.currently-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.currently-card { border-radius: 10px; padding: 1.25rem; border: 1px solid; }
+.currently-card.terra { background: var(--terra-pale); border-color: var(--terra-border); }
+.currently-card.fox { background: var(--fox-pale); border-color: var(--fox-border); }
+.currently-card.green { background: var(--green-pale); border-color: var(--green-mid); }
+.card-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
 .currently-card.terra .card-label { color: var(--terra); }
 .currently-card.fox .card-label { color: var(--fox-dark); }
 .currently-card.green .card-label { color: var(--moss-light); }
-
-.card-role {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-dark);
-  margin-bottom: 3px;
-  line-height: 1.4;
-}
-
-.card-org {
-  font-size: 12px;
-}
-
+.card-role { font-size: 13px; font-weight: 500; color: var(--text-dark); margin-bottom: 3px; line-height: 1.4; }
+.card-org { font-size: 12px; }
 .currently-card.terra .card-org { color: var(--terra); }
 .currently-card.fox .card-org { color: var(--fox-dark); }
 .currently-card.green .card-org { color: var(--moss-light); }
-
-/* ── ABOUT ── */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.about-text {
-  font-size: 15px;
-  line-height: 1.85;
-  color: var(--text-mid);
-}
-
+.about-grid { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
+.about-text { font-size: 15px; line-height: 1.85; color: var(--text-mid); }
 .about-text p { margin-bottom: 1.1rem; }
 .about-text em { font-style: italic; color: var(--moss-light); }
-
-.stat-stack { display: flex; flex-direction: column; gap: 12px; }
-
-.stat-card {
-  border-radius: 10px;
-  padding: 1rem 1.25rem;
-  border: 1px solid;
-}
-
-.stat-card.terra { background: var(--terra-pale); border-color: var(--terra-border); }
-.stat-card.green { background: var(--green-pale); border-color: var(--green-mid); }
-.stat-card.fox { background: var(--fox-pale); border-color: var(--fox-border); }
-
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 1.1;
-  margin-bottom: 3px;
-}
-
-.stat-card.terra .stat-num { color: var(--terra); }
-.stat-card.green .stat-num { color: var(--moss-light); }
-.stat-card.fox .stat-num { color: var(--fox-dark); }
-
-.stat-label { font-size: 12px; }
-.stat-card.terra .stat-label { color: var(--terra); }
-.stat-card.green .stat-label { color: var(--moss-light); }
-.stat-card.fox .stat-label { color: var(--fox-dark); }
-
-/* ── RAÍCES ── */
-.raices-banner {
-  background: var(--moss);
-  border-radius: 12px;
-  padding: 2.5rem;
-  margin-bottom: 1.75rem;
-}
-
-.raices-banner h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--green-pale);
-  margin-bottom: 4px;
-}
-
-.raices-tagline {
-  font-size: 13px;
-  font-style: italic;
-  color: var(--green-mid);
-  margin-bottom: 1rem;
-}
-
-.raices-desc {
-  font-size: 14px;
-  line-height: 1.75;
-  color: #A8C47A;
-  max-width: 560px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-bottom: 2rem;
-}
-
-.svc-card {
-  background: var(--cream);
-  border-radius: 10px;
-  padding: 1.25rem;
-  border: 1px solid var(--warm-gray);
-}
-
+.photo-col { display: flex; flex-direction: column; gap: 12px; }
+.photo-frame { width: 100%; aspect-ratio: 3/4; border-radius: 12px; background: var(--green-pale); border: 1px solid var(--green-mid); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; overflow: hidden; }
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+.photo-hint { font-size: 11px; color: var(--moss-light); text-align: center; padding: 1rem; }
+.stat-mini { border-radius: 8px; padding: .9rem 1.1rem; border: 1px solid; }
+.stat-mini.terra { background: var(--terra-pale); border-color: var(--terra-border); }
+.stat-mini.green { background: var(--green-pale); border-color: var(--green-mid); }
+.stat-mini.fox { background: var(--fox-pale); border-color: var(--fox-border); }
+.snum { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; margin-bottom: 3px; }
+.stat-mini.terra .snum { color: var(--terra); }
+.stat-mini.green .snum { color: var(--moss-light); }
+.stat-mini.fox .snum { color: var(--fox-dark); }
+.slabel { font-size: 12px; }
+.stat-mini.terra .slabel { color: var(--terra); }
+.stat-mini.green .slabel { color: var(--moss-light); }
+.stat-mini.fox .slabel { color: var(--fox-dark); }
+.raices-banner { background: var(--moss); border-radius: 12px; padding: 2.5rem; margin-bottom: 1.75rem; }
+.raices-banner h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--green-pale); margin-bottom: 4px; }
+.raices-tagline { font-size: 13px; font-style: italic; color: var(--green-mid); margin-bottom: 1rem; }
+.raices-desc { font-size: 14px; line-height: 1.75; color: #A8C47A; max-width: 560px; }
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.svc-card { background: var(--cream); border-radius: 10px; padding: 1.25rem; border: 1px solid var(--warm-gray); }
 .svc-card:nth-child(1) { border-top: 3px solid var(--terra-mid); }
 .svc-card:nth-child(2) { border-top: 3px solid var(--fox); }
 .svc-card:nth-child(3) { border-top: 3px solid var(--fern); }
-
-.svc-tier {
-  font-size: 10px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin-bottom: 6px;
-}
-
+.svc-tier { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
 .svc-card:nth-child(1) .svc-tier { color: var(--terra); }
 .svc-card:nth-child(2) .svc-tier { color: var(--fox-dark); }
 .svc-card:nth-child(3) .svc-tier { color: var(--moss-light); }
-
-.svc-name {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-dark);
-  margin-bottom: 6px;
-}
-
+.svc-name { font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 6px; }
 .svc-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
-
-/* ── CV ── */
-.cv-block { margin-bottom: 2.5rem; }
-
-.cv-block-head {
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  padding-bottom: 8px;
-  margin-bottom: 1.25rem;
-  border-bottom: 1px solid;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.cv-block-head.terra { color: var(--terra); border-color: var(--terra-border); }
-.cv-block-head.fox { color: var(--fox-dark); border-color: var(--fox-border); }
-.cv-block-head.green { color: var(--moss-light); border-color: var(--green-mid); }
-
-.org-group { margin-bottom: 1.5rem; }
-
-.org-label {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--terra);
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  margin-bottom: 10px;
-  padding-left: 14px;
-}
-
-.cv-item {
-  margin-bottom: 12px;
-  padding: 12px 14px;
-  border-radius: 8px;
-  border-left: 3px solid;
-}
-
-.cv-item.terra { border-color: var(--terra-border); background: #FFFAF8; }
-.cv-item.fox { border-color: var(--fox-border); background: #FAF7FD; }
-.cv-item.green { border-color: var(--green-mid); background: #F6FAF0; }
-
-.cv-badge {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 500;
-  padding: 2px 8px;
-  border-radius: 10px;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-}
-
-.cv-badge.terra { background: var(--terra-pale); color: var(--terra); }
-.cv-badge.fox { background: var(--fox-pale); color: var(--fox-dark); }
-.cv-badge.green { background: var(--green-pale); color: var(--moss-light); }
-
-.cv-role { font-size: 14px; font-weight: 500; color: var(--text-dark); }
-.cv-org { font-size: 13px; color: var(--text-muted); margin-top: 1px; }
-.cv-date { font-size: 11px; color: var(--text-hint); margin-top: 3px; }
-.cv-note { font-size: 12px; color: var(--text-muted); margin-top: 6px; line-height: 1.6; font-style: italic; }
-
-/* ── WRITING ── */
-.writing-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.writing-card {
-  background: var(--cream);
-  border: 1px solid var(--warm-gray);
-  border-radius: 10px;
-  padding: 1.25rem;
-  transition: border-color .2s;
-}
-
+.lj-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--warm-gray); }
+.lj-opening { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--moss); line-height: 1.55; margin-bottom: 1.5rem; }
+.lj-body { font-size: 14px; line-height: 1.95; color: var(--text-mid); }
+.lj-body p { margin-bottom: 1rem; }
+.lj-body em { font-style: italic; color: var(--moss-light); }
+.insta-card { background: var(--moss); border-radius: 12px; padding: 1.75rem; text-align: center; margin-bottom: 14px; }
+.insta-icon { width: 38px; height: 38px; margin: 0 auto 10px; background: var(--green-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.insta-name { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--green-pale); margin-bottom: 3px; }
+.insta-handle { font-size: 12px; color: var(--green-mid); margin-bottom: 1rem; letter-spacing: .03em; }
+.insta-desc { font-size: 12px; color: #A8C47A; line-height: 1.65; margin-bottom: 1.25rem; }
+.insta-btn { display: inline-block; font-size: 12px; font-weight: 500; padding: 8px 22px; border-radius: 20px; background: var(--green-pale); color: var(--moss-light); text-decoration: none; transition: background .18s; }
+.insta-btn:hover { background: var(--green-mid); }
+.garden-photo { width: 100%; aspect-ratio: 4/3; border-radius: 10px; background: var(--green-pale); border: 1px solid var(--green-mid); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; overflow: hidden; }
+.garden-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+.garden-hint { font-size: 11px; color: var(--moss-light); text-align: center; padding: 1rem; }
+.threads { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 2.5rem; }
+.thread { border-radius: 10px; padding: 1.25rem; border: 1px solid; }
+.thread.green { background: var(--green-pale); border-color: var(--green-mid); }
+.thread.terra { background: var(--terra-pale); border-color: var(--terra-border); }
+.thread.fox { background: var(--fox-pale); border-color: var(--fox-border); }
+.thread-tag { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+.thread.green .thread-tag { color: var(--moss-light); }
+.thread.terra .thread-tag { color: var(--terra); }
+.thread.fox .thread-tag { color: var(--fox-dark); }
+.thread-title { font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 6px; line-height: 1.4; }
+.thread-body { font-size: 12px; line-height: 1.7; }
+.thread.green .thread-body { color: var(--moss-light); }
+.thread.terra .thread-body { color: var(--terra); }
+.thread.fox .thread-body { color: var(--fox-dark); }
+.pull-bar { border-left: 3px solid var(--terra-mid); padding: 1.25rem 1.75rem; margin-bottom: 2.5rem; border-radius: 0 8px 8px 0; background: var(--cream-dark); }
+.pull-bar p { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--text-mid); line-height: 1.75; }
+.pull-bar em { color: var(--terra); }
+.pr-section { border-top: 1px solid var(--warm-gray); padding-top: 2.5rem; }
+.pr-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: start; }
+.pr-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--fox-dark); margin-bottom: .75rem; }
+.pr-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--moss); margin-bottom: 1rem; line-height: 1.3; }
+.pr-body { font-size: 14px; line-height: 1.9; color: var(--text-mid); }
+.pr-body p { margin-bottom: .9rem; }
+.pr-body em { font-style: italic; color: var(--moss-light); }
+.pr-aside { background: var(--fox-pale); border: 1px solid var(--fox-border); border-radius: 10px; padding: 1.25rem; }
+.pr-aside-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--fox-dark); margin-bottom: 6px; }
+.pr-aside-title { font-size: 13px; font-style: italic; color: var(--text-dark); margin-bottom: 8px; line-height: 1.45; }
+.pr-aside-body { font-size: 12px; color: var(--fox-dark); line-height: 1.65; }
+.writing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.writing-card { background: var(--cream); border: 1px solid var(--warm-gray); border-radius: 10px; padding: 1.25rem; transition: border-color .2s; }
 .writing-card:hover { border-color: var(--moss-light); }
 .writing-card.green-accent { background: var(--green-pale); border-color: var(--green-mid); }
-
-.writing-pub {
-  font-size: 10px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin-bottom: 7px;
-}
-
+.writing-pub { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 7px; }
 .writing-card:nth-child(1) .writing-pub { color: var(--terra); }
 .writing-card:nth-child(2) .writing-pub { color: var(--fox-dark); }
 .writing-card.green-accent .writing-pub { color: var(--moss-light); }
 .writing-card:nth-child(4) .writing-pub { color: var(--fox-dark); }
-
 .writing-title { font-size: 14px; font-weight: 500; color: var(--text-dark); line-height: 1.4; margin-bottom: 5px; }
 .writing-card.green-accent .writing-title { color: var(--moss); }
 .writing-date { font-size: 12px; color: var(--text-hint); }
 .writing-card.green-accent .writing-date { color: var(--moss-light); }
-
-/* ── CONTACT ── */
-.contact-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.contact-intro {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  font-weight: 400;
-  color: var(--moss);
-  line-height: 1.3;
-  margin-bottom: 1rem;
-}
-
-.contact-sub {
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--text-mid);
-  margin-bottom: 1.75rem;
-}
-
+.contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.contact-intro { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--moss); line-height: 1.3; margin-bottom: 1rem; }
+.contact-sub { font-size: 14px; line-height: 1.8; color: var(--text-mid); margin-bottom: 1.75rem; }
 .contact-links { display: flex; flex-direction: column; gap: 12px; }
-
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--text-mid);
-  text-decoration: none;
-  transition: color .2s;
-}
-
+.contact-link { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-mid); text-decoration: none; transition: color .2s; }
 .contact-link:hover { color: var(--moss-light); }
-
-.contact-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.contact-aside {
-  background: var(--moss);
-  border-radius: 12px;
-  padding: 2rem;
-}
-
-.contact-aside-head {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--green-pale);
-  margin-bottom: 6px;
-}
-
-.contact-aside-sub {
-  font-size: 12px;
-  font-style: italic;
-  color: var(--green-mid);
-  margin-bottom: 1rem;
-}
-
-.contact-aside p {
-  font-size: 13px;
-  line-height: 1.75;
-  color: #A8C47A;
-}
-
-/* ── FOOTER ── */
-footer {
-  padding: 1.75rem 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid var(--warm-gray);
-}
-
-.footer-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  color: var(--text-hint);
-}
-
-.footer-note {
-  font-size: 12px;
-  font-style: italic;
-  color: var(--warm-gray);
-  letter-spacing: .03em;
-}
-
-/* ── MOBILE ── */
+.contact-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.cv-note-box { background: var(--cream-dark); border: 1px solid var(--warm-gray); border-radius: 8px; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+.cv-note-box strong { color: var(--text-dark); }
+.contact-aside { background: var(--moss); border-radius: 12px; padding: 2rem; }
+.contact-aside-head { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--green-pale); margin-bottom: 5px; }
+.contact-aside-sub { font-size: 12px; font-style: italic; color: var(--green-mid); margin-bottom: .85rem; }
+.contact-aside p { font-size: 13px; line-height: 1.75; color: #A8C47A; }
+footer { padding: 1.75rem 2.5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--warm-gray); }
+.footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--text-hint); }
+.footer-note { font-size: 12px; font-style: italic; color: var(--warm-gray); letter-spacing: .03em; }
 @media (max-width: 680px) {
   nav { padding: 0 1.25rem; }
-  .nav-links { gap: 1.1rem; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 11px; }
   .hero { padding: 3rem 1.25rem 2.5rem; }
   .section { padding: 2rem 1.25rem; }
-  .currently-grid { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; }
-  .services-grid { grid-template-columns: 1fr; }
-  .writing-grid { grid-template-columns: 1fr; }
-  .contact-wrap { grid-template-columns: 1fr; }
+  .currently-grid, .about-grid, .lj-hero, .services-grid, .writing-grid, .contact-wrap, .threads, .pr-grid { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 6px; text-align: center; }
 }
 </style>
@@ -629,13 +209,12 @@ footer {
     <li><a href="#" onclick="show('home'); return false;" id="t-home" class="active">home</a></li>
     <li><a href="#" onclick="show('about'); return false;" id="t-about">about</a></li>
     <li><a href="#" onclick="show('raices'); return false;" id="t-raices">raíces</a></li>
-    <li><a href="#" onclick="show('cv'); return false;" id="t-cv">cv</a></li>
+    <li><a href="#" onclick="show('land'); return false;" id="t-land">land & roots</a></li>
     <li><a href="#" onclick="show('writing'); return false;" id="t-writing">writing</a></li>
     <li><a href="#" onclick="show('contact'); return false;" id="t-contact">contact</a></li>
   </ul>
 </nav>
 
-<!-- HOME -->
 <div id="p-home" class="page active">
   <div class="hero">
     <p class="hero-location">Kensington, Philadelphia</p>
@@ -653,7 +232,7 @@ footer {
     <div class="cta-row">
       <button class="btn btn-moss" onclick="show('about')">about me</button>
       <button class="btn btn-outline-moss" onclick="show('raices')">work with me</button>
-      <button class="btn btn-outline-fox" onclick="show('cv')">my cv</button>
+      <button class="btn btn-outline-fox" onclick="show('land')">land & roots</button>
     </div>
   </div>
   <div class="section">
@@ -678,7 +257,6 @@ footer {
   </div>
 </div>
 
-<!-- ABOUT -->
 <div id="p-about" class="page">
   <div class="section">
     <p class="section-eyebrow">about</p>
@@ -688,29 +266,30 @@ footer {
         <p>She serves as Development & Communications Manager at Kensington Corridor Trust, a pioneering neighborhood trust model that moves commercial property into community hands along Kensington Avenue. She is also the founder of Raíces Consulting LLC and a doctoral researcher in Geography, Environment & Urban Studies at Temple University.</p>
         <p>Her work asks a single question in many forms: <em>what does it look like for communities to stay, thrive, and determine their own futures on their own land?</em></p>
       </div>
-      <div class="stat-stack">
-        <div class="stat-card terra">
-          <div class="stat-num">$271K</div>
-          <div class="stat-label">raised in first year as a first-time fundraiser</div>
+      <div class="photo-col">
+        <div class="photo-frame">
+          <!-- TO ADD YOUR PHOTO: replace everything between these comments with:
+               <img src="photo.jpg" alt="Jasmin Velez"> -->
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="15" r="8" stroke="#3B6D11" stroke-width="1.5"/><path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <p class="photo-hint">Your photo here<br><span style="font-size:10px;color:var(--text-hint);">upload photo.jpg and replace the SVG with an img tag</span></p>
         </div>
-        <div class="stat-card green">
-          <div class="stat-num">10+</div>
-          <div class="stat-label">years in community organizing & environmental justice</div>
+        <div class="stat-mini terra">
+          <div class="snum">$271K</div>
+          <div class="slabel">raised in first year as a first-time fundraiser</div>
         </div>
-        <div class="stat-card fox">
-          <div class="stat-num">Bilingual</div>
-          <div class="stat-label">English & Spanish community engagement</div>
+        <div class="stat-mini green">
+          <div class="snum">10+</div>
+          <div class="slabel">years in community organizing & environmental justice</div>
         </div>
-        <div class="stat-card fox">
-          <div class="stat-num">MA + PhD</div>
-          <div class="stat-label">Anthropology · Geography, Environment & Urban Studies</div>
+        <div class="stat-mini fox">
+          <div class="snum">Bilingual</div>
+          <div class="slabel">English & Spanish community engagement</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- RAÍCES -->
 <div id="p-raices" class="page">
   <div class="section">
     <p class="section-eyebrow">consulting</p>
@@ -739,78 +318,80 @@ footer {
   </div>
 </div>
 
-<!-- CV -->
-<div id="p-cv" class="page">
+<div id="p-land" class="page">
   <div class="section">
-    <p class="section-eyebrow">curriculum vitae</p>
-
-    <div class="cv-block">
-      <p class="cv-block-head terra">professional experience</p>
-
-      <div class="org-group">
-        <p class="org-label">Kensington Corridor Trust · Philadelphia, PA</p>
-        <div class="cv-item terra">
-          <span class="cv-badge terra">current</span>
-          <p class="cv-role">Development & Communications Manager</p>
-          <p class="cv-date">June 2024 – present</p>
-          <p class="cv-note">Raised $271,000 in first year; leads all grant writing, donor cultivation, Salesforce CRM, organizational communications, and media relations.</p>
-        </div>
-        <div class="cv-item terra">
-          <p class="cv-role">Lead Community Organizer</p>
-          <p class="cv-date">February 2022 – June 2024</p>
-          <p class="cv-note">Built KCT's community foundation during early growth phase — base-building, coalition work, resident leadership development, asset mapping, and commercial corridor visioning.</p>
+    <p class="section-eyebrow">land & roots</p>
+    <div class="lj-hero">
+      <div>
+        <p class="lj-opening">I have always loved growing things.<br>The work taught me what I was doing.</p>
+        <div class="lj-body">
+          <p>Growing was never something I came to — it was already in me. What the organizing work gave me was language for what I had always known: that to tend a garden is an act of resistance, of care, of joy, of history, of culture. Of refusal and abundance at the same time.</p>
+          <p>La Jardinera Boricua is my ongoing account of that relationship — learning to grow, to save seeds, to cook from what the soil gives, to understand the land not as a concept but as something you know in your hands and your body. It started in a row home in Kensington, in containers on a stoop, in every inch of space I could find. It is still becoming.</p>
+          <p><em>This is not a credential. It is a practice. And the learning is ongoing.</em></p>
         </div>
       </div>
-
-      <div class="cv-item fox">
-        <span class="cv-badge fox">consulting</span>
-        <p class="cv-role">Founder & Principal Consultant</p>
-        <p class="cv-org">Raíces Consulting LLC</p>
-        <p class="cv-date">2022 – present</p>
-        <p class="cv-note">Trust-based consulting practice offering community engagement strategy, fundraising, and program development. Select client: Good Energy Collective — community engagement research for just transition planning in coal communities.</p>
+      <div>
+        <div class="insta-card">
+          <div class="insta-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#27500A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#27500A" stroke="none"/></svg>
+          </div>
+          <p class="insta-name">La Jardinera Boricua</p>
+          <p class="insta-handle">@lajardineraboricua</p>
+          <p class="insta-desc">Growing things. Saving seeds. Cooking from the garden. Learning what it means to tend the land as a Puerto Rican woman.</p>
+          <a href="https://instagram.com/lajardineraboricua" target="_blank" class="insta-btn">follow along</a>
+        </div>
+        <div class="garden-photo" style="margin-top:14px;">
+          <!-- TO ADD A PHOTO: replace everything between these comments with:
+               <img src="garden.jpg" alt="garden"> -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <p class="garden-hint">A garden photo here<br><span style="font-size:10px;color:var(--text-hint);">upload garden.jpg and replace the SVG with an img tag</span></p>
+        </div>
       </div>
     </div>
 
-    <div class="cv-block">
-      <p class="cv-block-head fox">education</p>
-      <div class="cv-item fox">
-        <span class="cv-badge fox">in progress</span>
-        <p class="cv-role">PhD, Geography, Environment & Urban Studies</p>
-        <p class="cv-org">Temple University · advisor: Dr. Christina Rosan</p>
-        <p class="cv-note">Dissertation: gentrification, displacement & climate equity in Latine/x communities. NSF-funded research on heat pump deployment and climate equity.</p>
+    <div class="threads">
+      <div class="thread green">
+        <p class="thread-tag">seed saving</p>
+        <p class="thread-title">Keeping the lineage alive</p>
+        <p class="thread-body">Saving seeds is an act of memory. Every tomato, every pepper, every flower returned to envelope is a small refusal of dependence — and a bet on next season.</p>
       </div>
-      <div class="cv-item fox">
-        <p class="cv-role">MA, Anthropology</p>
-        <p class="cv-org">University of Colorado Denver · 2017</p>
-        <p class="cv-note">Thesis: Reimagining the Jíbaro — postcolonial land dispossession and farming identity in Puerto Rico's specialty coffee sector. 15 interviews with multigenerational farming families.</p>
+      <div class="thread terra">
+        <p class="thread-tag">cooking from the garden</p>
+        <p class="thread-title">From soil to table</p>
+        <p class="thread-body">Growing what you eat changes your relationship to food, to labor, to abundance and scarcity. The kitchen is part of the garden. They are not separate rooms.</p>
       </div>
-      <div class="cv-item fox">
-        <p class="cv-role">BA, Anthropology</p>
-        <p class="cv-org">Bloomsburg University · 2015</p>
-      </div>
-    </div>
-
-    <div class="cv-block">
-      <p class="cv-block-head green">civic leadership</p>
-      <div class="cv-item green">
-        <p class="cv-role">Board Member · Neighborhood Gardens Trust</p>
-      </div>
-      <div class="cv-item green">
-        <p class="cv-role">Co-Secretary · Friends of Harrowgate Park</p>
-      </div>
-      <div class="cv-item green">
-        <p class="cv-role">Member · Philly Tree Coalition</p>
-      </div>
-      <div class="cv-item green">
-        <p class="cv-role">Master Gardener Volunteer · Penn State Extension</p>
+      <div class="thread fox">
+        <p class="thread-tag">environmental justice</p>
+        <p class="thread-title">Why growing is political</p>
+        <p class="thread-body">Access to land, clean soil, seeds, and space to grow are environmental justice issues. The garden is not separate from the research. It is the research, lived.</p>
       </div>
     </div>
 
-    <button class="btn btn-outline-moss" style="margin-top: .5rem;">Download full CV (PDF)</button>
+    <div class="pull-bar">
+      <p>"Growing was never something I came to — it was already in me. What the organizing work gave me was language for what I had always known: that to tend a garden is an act of resistance, of care, of joy, of history, of culture. <em>Of refusal and abundance at the same time.</em>"</p>
+    </div>
+
+    <div class="pr-section">
+      <div class="pr-grid">
+        <div>
+          <p class="pr-label">where it deepened</p>
+          <p class="pr-title">Puerto Rico & the coffee farmers</p>
+          <div class="pr-body">
+            <p>Before I had my own garden, I spent time in Puerto Rico with multigenerational coffee farming families — listening to how they talked about land, labor, and identity across generations shaped by colonial dispossession. I was there as a researcher. I left as something else.</p>
+            <p>What those conversations gave me was an understanding that the relationship to land is never just agricultural. It is ancestral, political, and deeply personal — especially for Puerto Rican families for whom land has been taken, managed, and legislated by outside forces for over a century.</p>
+            <p><em>La Jardinera Boricua is, in part, my attempt to work that out in my own hands.</em></p>
+          </div>
+        </div>
+        <div class="pr-aside">
+          <p class="pr-aside-label">MA thesis</p>
+          <p class="pr-aside-title">Reimagining the Jíbaro: Postcolonial Identity in Puerto Rico and the Specialty Coffee Market</p>
+          <p class="pr-aside-body">15 interviews with multigenerational coffee farming families. University of Colorado Denver, 2017.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- WRITING -->
 <div id="p-writing" class="page">
   <div class="section">
     <p class="section-eyebrow">writing & public scholarship</p>
@@ -839,7 +420,6 @@ footer {
   </div>
 </div>
 
-<!-- CONTACT -->
 <div id="p-contact" class="page">
   <div class="section">
     <p class="section-eyebrow">get in touch</p>
@@ -849,21 +429,24 @@ footer {
         <p class="contact-sub">Whether you're interested in working together through Raíces, reaching out about research, or connecting around shared work in land justice and environmental equity — I'd love to hear from you.</p>
         <div class="contact-links">
           <a href="mailto:your@email.com" class="contact-link">
-            <span class="contact-dot" style="background: var(--moss-light);"></span>
+            <span class="contact-dot" style="background:var(--moss-light);"></span>
             your@email.com
           </a>
-          <a href="https://linkedin.com/in/jasminvelez" class="contact-link" target="_blank">
-            <span class="contact-dot" style="background: var(--moss-light);"></span>
+          <a href="https://linkedin.com/in/jasminvelez" target="_blank" class="contact-link">
+            <span class="contact-dot" style="background:var(--moss-light);"></span>
             LinkedIn · Jasmin Velez
           </a>
-          <a href="#" class="contact-link" onclick="show('raices'); return false;">
-            <span class="contact-dot" style="background: var(--fox);"></span>
-            Raíces Consulting LLC
+          <a href="https://instagram.com/lajardineraboricua" target="_blank" class="contact-link">
+            <span class="contact-dot" style="background:var(--fox);"></span>
+            @lajardineraboricua · La Jardinera Boricua
           </a>
           <span class="contact-link">
-            <span class="contact-dot" style="background: var(--terra-mid);"></span>
+            <span class="contact-dot" style="background:var(--terra-mid);"></span>
             Philadelphia, PA
           </span>
+        </div>
+        <div class="cv-note-box">
+          <strong>Academic CV available on request.</strong> Reaching out about fellowship applications, academic collaborations, or research partnerships? I'm happy to share my full CV — just drop me a note.
         </div>
       </div>
       <div class="contact-aside">
@@ -889,6 +472,5 @@ function show(name) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
-
 </body>
 </html>
