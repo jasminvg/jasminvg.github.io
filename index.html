@@ -475,4 +475,11 @@ footer { padding: 1.75rem 3rem; display: flex; justify-content: space-between; a
 <script>
 function show(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').fo
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('p-' + name).classList.add('active');
+  document.getElementById('t-' + name).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
