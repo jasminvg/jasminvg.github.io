@@ -74,8 +74,9 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-b
 .hero { padding: 5rem 3rem 4rem; border-bottom: 1px solid var(--warm-gray); text-align: center; display: flex; flex-direction: column; align-items: center; }
 .hero-location { font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; }
 .hero-location::before, .hero-location::after { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--terra-mid); }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 400; line-height: 1.25; color: var(--moss); max-width: 680px; margin-bottom: 1.5rem; }
-.hero h1 em { font-style: italic; color: var(--terra); }
+.hero h1 em { font-style: italic; }
+.hero h1 .em-fox { color: var(--fox); }
+.hero h1 .em-terra { color: var(--terra); }
 .hero-bio { font-size: 16px; line-height: 1.8; color: var(--text-mid); max-width: 580px; margin-bottom: 2.25rem; }
 .hero-bio em { font-style: italic; color: var(--moss-light); }
 .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; justify-content: center; }
@@ -250,8 +251,8 @@ footer { padding: 1.75rem 3rem; display: flex; justify-content: space-between; a
 <div id="p-home" class="page active">
   <div class="hero">
     <p class="hero-location">Somewhere in between Philadelphia & Puerto Rico.</p>
-    <h1>Practitioner-scholar rooted in land justice, <em>environmental equity</em> & decolonial community practice</h1>
-    <p class="hero-bio">I am a Puerto Rican community organizer, nonprofit fundraiser, and doctoral researcher building toward futures where communities stay, thrive, and determine their own destinies on their own land. <em>Before you expand, you tend the roots.</em></p>
+    <h1>Practitioner-scholar rooted in <em class="em-fox">decolonial practice</em>, working toward <em class="em-terra">land justice</em> & communities that get to stay</h1>
+    <p class="hero-bio">I am a Puerto Rican community organizer, nonprofit fundraiser, and doctoral researcher building toward futures where communities stay, thrive, and determine their own destinies on their own land.<br><em>Before you expand, you tend the roots.</em></p>
     <div class="pill-row">
       <span class="pill pill-green">Land Sovereignty</span>
       <span class="pill pill-fox">(Decolonize)Academia</span>
@@ -260,9 +261,9 @@ footer { padding: 1.75rem 3rem; display: flex; justify-content: space-between; a
       <span class="pill pill-green">Raíces Consulting</span>
     </div>
     <div class="cta-row">
-      <button class="btn btn-moss" onclick="show('about')">about me</button>
-      <button class="btn btn-outline-moss" onclick="show('raices')">work with me</button>
-      <button class="btn btn-outline-fox" onclick="show('land')">land & roots</button>
+      <button class="btn btn-moss" onclick="show('about')">ABOUT ME</button>
+      <button class="btn btn-outline-moss" onclick="show('raices')">CONSULTING</button>
+      <button class="btn btn-outline-fox" onclick="show('land')">LAND & ROOTS</button>
     </div>
   </div>
   <div class="section">
@@ -292,12 +293,13 @@ footer { padding: 1.75rem 3rem; display: flex; justify-content: space-between; a
   <div class="section">
     <p class="section-eyebrow">about</p>
     <div class="about-grid">
-      <div class="about-text">
-        <p>Jasmin Vélez is a Puerto Rican practitioner-scholar whose work asks <em>what it takes for communities to stay, thrive, and shape their futures on their own land</em>. 
-          For over a decade, she has worked at the intersection of land justice, environmental equity, and decolonial community practice.</p>
-<p>She is Development & Communications Manager at Kensington Corridor Trust, Philadelphia's first neighborhood trust.</p> 
-        <p>As principal of Raíces Consulting, she leads research, archival, and storytelling projects for land trusts, community organizations, universities, and funders.</p> 
- <p>Lastly, as a PhD candidate at Temple University, Jasmin studies gentrification, displacement, and transnational belonging among Puerto Ricans in Philadelphia and the archipelago.</p>
+            <div class="about-text">
+        <p>Jasmin Vélez is a Puerto Rican practitioner-scholar, organizer, and researcher rooted in Kensington, Philadelphia. Her work asks a single question in many forms: <em>what does it look like for communities to stay, thrive, and determine their own futures on their own land?</em></p>
+        <p>She is Development & Communications Manager at Kensington Corridor Trust, Philadelphia's first neighborhood trust, which moves commercial property into community hands along Kensington Avenue.</p>
+        <p>As principal of Raíces Consulting LLC, she partners with land trusts, community organizations, cultural institutions, and funders on community-based research, oral history and archival projects, engagement design, and bilingual storytelling.</p>
+        <p>Jasmin is a PhD candidate in Geography, Environment & Urban Studies at Temple University. Her dissertation follows Puerto Ricans in Philadelphia and Puerto Rico through gentrification, displacement, and the <em>vaivén</em> of diaspora life.</p>
+        <p>She holds an M.A. in Medical Anthropology from the University of Colorado Denver, where she studied land and identity with multigenerational coffee-farming families in Puerto Rico.</p>
+        <p>Off the clock, she grows food as La Jardinera Boricua and writes <em>Tending the Roots</em>, a newsletter on land, memory, and the garden.</p>
       </div>
       <div class="photo-col">
         <div class="photo-frame">
