@@ -3,510 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jasmin Velez — Practitioner-Scholar, Organizer, Consultant</title>
+<title>Jasmin Vélez · Practitioner-Scholar</title>
+<meta name="description" content="Jasmin Vélez is a Puerto Rican practitioner-scholar researching land, displacement, and memory between Philadelphia and Puerto Rico.">
+<meta property="og:title" content="Jasmin Vélez · Practitioner-Scholar">
+<meta property="og:description" content="Research and organizing for land justice, between Kensington and Borikén.">
+<meta property="og:image" content="https://www.jasminvelez.com/aboutme.JPG">
+<meta property="og:url" content="https://www.jasminvelez.com/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23c8402a'/><text x='50' y='70' font-size='56' text-anchor='middle' fill='%23f4ecdf' font-family='Impact,sans-serif'>JV</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --moss: #3B5323;
-  --moss-light: #3B6D11;
-  --fern: #548235;
-  --green-pale: #EAF3DE;
-  --green-mid: #C0DD97;
-  --terra: #8B4513;
-  --terra-mid: #D85A30;
-  --terra-pale: #FAECE7;
-  --terra-border: #F0997B;
-  --fox: #7B5EA7;
-  --fox-pale: #F0EBF8;
-  --fox-border: #B89FD0;
-  --fox-dark: #4A2D6F;
-  --cream: #FAF6EE;
-  --cream-dark: #F0E8D8;
-  --warm-gray: #D3D1C7;
-  --text-dark: #2C2C2A;
-  --text-mid: #444441;
-  --text-muted: #5F5E5A;
-  --text-hint: #888780;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text-dark); font-size: 16px; line-height: 1.6; }
-
-  /* URLCOLORS */
-  a, a:visited { color: var(--moss); text-decoration: underline; text-decoration-color: var(--terra-border); text-underline-offset: 3px; transition: color .2s; }
-a:hover, a:focus { color: var(--terra); }
-
-/* LINKS */
-a, a:visited { color: var(--moss); text-decoration: underline; text-decoration-color: var(--terra-border); text-underline-offset: 3px; transition: color .2s; }
-a:hover, a:focus { color: var(--terra); }
-  
-/* NAV */
-nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid var(--warm-gray); padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-.nav-name { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--moss); letter-spacing: .01em; text-decoration: none; }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a { font-size: 13px; font-weight: 400; color: var(--text-muted); text-decoration: none; letter-spacing: .04em; text-transform: lowercase; transition: color .2s; position: relative; padding-bottom: 2px; cursor: pointer; }
-.nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: var(--moss-light); transition: width .25s ease; }
-.nav-links a:hover { color: var(--moss); }
-.nav-links a:hover::after { width: 100%; }
-.nav-links a.active { color: var(--moss); font-weight: 500; }
-.nav-links a.active::after { width: 100%; }
-
-/* PAGES */
-.page { display: none; animation: fadeIn .3s ease; }
-.page.active { display: block; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-
-/* SHARED */
-.section { padding: 3.5rem 3rem; border-bottom: 1px solid var(--warm-gray); }
-.section-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1.75rem; display: flex; align-items: center; gap: 8px; }
-.section-eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--warm-gray); max-width: 60px; }
-.btn { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; padding: 10px 22px; border-radius: 6px; cursor: pointer; letter-spacing: .03em; transition: all .2s; text-decoration: none; display: inline-block; border: 1px solid; }
-.btn-moss { background: var(--moss); color: var(--green-pale); border-color: var(--moss); }
-.btn-moss:hover { background: var(--moss-light); border-color: var(--moss-light); }
-.btn-outline-moss { background: transparent; color: var(--moss-light); border-color: var(--moss-light); }
-.btn-outline-moss:hover { background: var(--green-pale); }
-.btn-outline-fox { background: transparent; color: var(--fox-dark); border-color: var(--fox); }
-.btn-outline-fox:hover { background: var(--fox-pale); }
-
-/* HERO — centered */
-.hero { padding: 5rem 3rem 4rem; border-bottom: 1px solid var(--warm-gray); text-align: center; display: flex; flex-direction: column; align-items: center; }
-.hero-location { font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px; }
-.hero-location::before, .hero-location::after { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--terra-mid); }
-.hero h1 em { font-style: italic; }
-.hero h1 .em-fox { color: var(--fox); }
-.hero h1 .em-terra { color: var(--terra); }
-.hero-bio { font-size: 16px; line-height: 1.8; color: var(--text-mid); max-width: 580px; margin-bottom: 2.25rem; }
-.hero-bio em { font-style: italic; color: var(--moss-light); }
-.pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2.5rem; justify-content: center; }
-.pill { font-size: 12px; padding: 5px 14px; border-radius: 20px; letter-spacing: .02em; }
-.pill-green { background: var(--green-pale); border: 1px solid var(--green-mid); color: var(--moss-light); }
-.pill-terra { background: var(--terra-pale); border: 1px solid var(--terra-border); color: var(--terra); }
-.pill-fox { background: var(--fox-pale); border: 1px solid var(--fox-border); color: var(--fox-dark); }
-.pill-gray { background: var(--cream-dark); border: 1px solid var(--warm-gray); color: var(--text-muted); }
-.cta-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-
-/* CURRENTLY */
-.currently-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-.currently-card { border-radius: 10px; padding: 1.25rem; border: 1px solid; }
-.currently-card.terra { background: var(--terra-pale); border-color: var(--terra-border); }
-.currently-card.fox { background: var(--fox-pale); border-color: var(--fox-border); }
-.currently-card.green { background: var(--green-pale); border-color: var(--green-mid); }
-.card-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
-.currently-card.terra .card-label { color: var(--terra); }
-.currently-card.fox .card-label { color: var(--fox-dark); }
-.currently-card.green .card-label { color: var(--moss-light); }
-.card-role { font-size: 13px; font-weight: 500; color: var(--text-dark); margin-bottom: 3px; line-height: 1.4; }
-.card-org { font-size: 12px; }
-.currently-card.terra .card-org { color: var(--terra); }
-.currently-card.fox .card-org { color: var(--fox-dark); }
-.currently-card.green .card-org { color: var(--moss-light); }
-
-/* ABOUT — photo right, text left, single stat */
-.about-grid { display: grid; grid-template-columns: 1fr 260px; gap: 3rem; align-items: start; }
-.about-text { font-size: 15px; line-height: 1.85; color: var(--text-mid); }
-.about-text p { margin-bottom: 1.1rem; }
-.about-text em { font-style: italic; color: var(--moss-light); }
-.photo-col { display: flex; flex-direction: column; gap: 14px; }
-.photo-frame { width: 100%; aspect-ratio: 3/4; border-radius: 12px; background: var(--green-pale); border: 1px solid var(--green-mid); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; overflow: hidden; }
-.photo-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
-.photo-hint { font-size: 11px; color: var(--moss-light); text-align: center; padding: 1rem; line-height: 1.6; }
-.stat-lone { background: var(--green-pale); border: 1px solid var(--green-mid); border-radius: 8px; padding: 1rem 1.25rem; }
-.stat-lone .snum { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--moss-light); margin-bottom: 3px; }
-.stat-lone .slabel { font-size: 12px; color: var(--moss-light); line-height: 1.5; }
-
-/* RAÍCES */
-.raices-banner { background: var(--moss); border-radius: 12px; padding: 2.5rem; margin-bottom: 1.75rem; }
-.raices-banner h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--green-pale); margin-bottom: 4px; }
-.raices-tagline { font-size: 13px; font-style: italic; color: var(--green-mid); margin-bottom: 1rem; }
-.raices-desc { font-size: 14px; line-height: 1.75; color: #A8C47A; max-width: 560px; }
-.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-.svc-card { background: var(--cream); border-radius: 10px; padding: 1.25rem; border: 1px solid var(--warm-gray); }
-.svc-card:nth-child(1) { border-top: 3px solid var(--terra-mid); }
-.svc-card:nth-child(2) { border-top: 3px solid var(--fox); }
-.svc-card:nth-child(3) { border-top: 3px solid var(--fern); }
-.svc-tier { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
-.svc-card:nth-child(1) .svc-tier { color: var(--terra); }
-.svc-card:nth-child(2) .svc-tier { color: var(--fox-dark); }
-.svc-card:nth-child(3) .svc-tier { color: var(--moss-light); }
-.svc-name { font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 6px; }
-.svc-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
-
-/* LAND & ROOTS */
-.lj-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--warm-gray); }
-.lj-opening { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--moss); line-height: 1.55; margin-bottom: 1.5rem; }
-.lj-body { font-size: 14px; line-height: 1.95; color: var(--text-mid); }
-.lj-body p { margin-bottom: 1rem; }
-.lj-body em { font-style: italic; color: var(--moss-light); }
-.insta-card { background: var(--moss); border-radius: 12px; padding: 1.75rem; text-align: center; margin-bottom: 14px; }
-.insta-icon { width: 38px; height: 38px; margin: 0 auto 10px; background: var(--green-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-.insta-name { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--green-pale); margin-bottom: 3px; }
-.insta-handle { font-size: 12px; color: var(--green-mid); margin-bottom: 1rem; letter-spacing: .03em; }
-.insta-desc { font-size: 12px; color: #A8C47A; line-height: 1.65; margin-bottom: 1.25rem; }
-.insta-btn { display: inline-block; font-size: 12px; font-weight: 500; padding: 8px 22px; border-radius: 20px; background: var(--green-pale); color: var(--moss-light); text-decoration: none; transition: background .18s; }
-.insta-btn:hover { background: var(--green-mid); }
-.garden-photo { width: 100%; border-radius: 10px; overflow: hidden; }
-.garden-photo img { width: 100%; height: auto; display: block; border-radius: 10px; }
-.garden-hint { font-size: 11px; color: var(--moss-light); text-align: center; padding: 1rem; line-height: 1.6; }
-.threads { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 2.5rem; }
-.thread { border-radius: 10px; padding: 1.25rem; border: 1px solid; }
-.thread.green { background: var(--green-pale); border-color: var(--green-mid); }
-.thread.terra { background: var(--terra-pale); border-color: var(--terra-border); }
-.thread.fox { background: var(--fox-pale); border-color: var(--fox-border); }
-.thread-tag { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
-.thread.green .thread-tag { color: var(--moss-light); }
-.thread.terra .thread-tag { color: var(--terra); }
-.thread.fox .thread-tag { color: var(--fox-dark); }
-.thread-title { font-size: 14px; font-weight: 500; color: var(--text-dark); margin-bottom: 6px; line-height: 1.4; }
-.thread-body { font-size: 12px; line-height: 1.7; }
-.thread.green .thread-body { color: var(--moss-light); }
-.thread.terra .thread-body { color: var(--terra); }
-.thread.fox .thread-body { color: var(--fox-dark); }
-.pull-bar { border-left: 3px solid var(--terra-mid); padding: 1.25rem 1.75rem; margin-bottom: 2.5rem; border-radius: 0 8px 8px 0; background: var(--cream-dark); }
-.pull-bar p { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--text-mid); line-height: 1.75; }
-.pull-bar em { color: var(--terra); }
-.pr-section { border-top: 1px solid var(--warm-gray); padding-top: 2.5rem; }
-.pr-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: start; }
-.pr-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .1em; color: var(--fox-dark); margin-bottom: .75rem; }
-.pr-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--moss); margin-bottom: 1rem; line-height: 1.3; }
-.pr-body { font-size: 14px; line-height: 1.9; color: var(--text-mid); }
-.pr-body p { margin-bottom: .9rem; }
-.pr-body em { font-style: italic; color: var(--moss-light); }
-.pr-aside { background: var(--fox-pale); border: 1px solid var(--fox-border); border-radius: 10px; padding: 1.25rem; }
-.pr-aside-label { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--fox-dark); margin-bottom: 6px; }
-.pr-aside-title { font-size: 13px; font-style: italic; color: var(--text-dark); margin-bottom: 8px; line-height: 1.45; }
-.pr-aside-body { font-size: 12px; color: var(--fox-dark); line-height: 1.65; }
-
-/* WRITING */
-.writing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.writing-card { background: var(--cream); border: 1px solid var(--warm-gray); border-radius: 10px; padding: 1.25rem; transition: border-color .2s; }
-.writing-card:hover { border-color: var(--moss-light); }
-.writing-card.green-accent { background: var(--green-pale); border-color: var(--green-mid); }
-.writing-pub { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 7px; }
-.writing-card:nth-child(1) .writing-pub { color: var(--terra); }
-.writing-card:nth-child(2) .writing-pub { color: var(--fox-dark); }
-.writing-card.green-accent .writing-pub { color: var(--moss-light); }
-.writing-card:nth-child(4) .writing-pub { color: var(--fox-dark); }
-.writing-title { font-size: 14px; font-weight: 500; color: var(--text-dark); line-height: 1.4; margin-bottom: 5px; }
-.writing-card.green-accent .writing-title { color: var(--moss); }
-.writing-date { font-size: 12px; color: var(--text-hint); }
-.writing-card.green-accent .writing-date { color: var(--moss-light); }
-.writing-card:nth-child(1) { background: var(--terra-pale); border-color: var(--terra-border); }
-.writing-card:nth-child(2) { background: var(--fox-pale); border-color: var(--fox-border); }
-.writing-card:nth-child(4) { background: var(--terra-pale); border-color: var(--terra-border); }
-.writing-card:nth-child(4) .writing-pub { color: var(--terra); }
-
-/* CONTACT */
-.contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-.contact-intro { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--moss); line-height: 1.3; margin-bottom: 1rem; }
-.contact-sub { font-size: 14px; line-height: 1.8; color: var(--text-mid); margin-bottom: 1.75rem; }
-.contact-links { display: flex; flex-direction: column; gap: 12px; }
-.contact-link { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-mid); text-decoration: none; transition: color .2s; }
-.contact-link:hover { color: var(--moss-light); }
-.contact-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.cv-note-box { background: var(--cream-dark); border: 1px solid var(--warm-gray); border-radius: 8px; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 12px; color: var(--text-muted); line-height: 1.6; }
-.cv-note-box strong { color: var(--text-dark); }
-.contact-aside { background: var(--moss); border-radius: 12px; padding: 2rem; }
-.contact-aside-head { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--green-pale); margin-bottom: 5px; }
-.contact-aside-sub { font-size: 12px; font-style: italic; color: var(--green-mid); margin-bottom: .85rem; }
-.contact-aside p { font-size: 13px; line-height: 1.75; color: #A8C47A; }
-
-/* FOOTER */
-footer { padding: 1.75rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--warm-gray); }
-.footer-name { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--text-hint); }
-.footer-note { font-size: 12px; font-style: italic; color: var(--warm-gray); letter-spacing: .03em; }
-
-/* SUBSCRIBE */
-.subscribe-bar { background: var(--moss); padding: 3.5rem 3rem; text-align: center; }
-.subscribe-bar h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--green-pale); margin-bottom: .75rem; }
-.subscribe-bar p { font-size: 14px; color: #A8C47A; line-height: 1.7; max-width: 480px; margin: 0 auto 1.75rem; }
-.subscribe-btn { display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; padding: 11px 28px; border-radius: 6px; background: var(--green-pale); color: var(--moss); text-decoration: none; letter-spacing: .03em; transition: background .2s; }
-.subscribe-btn:hover { background: var(--green-mid); }
-.subscribe-tagline { font-size: 11px; color: var(--green-mid); margin-top: 1rem; font-style: italic; letter-spacing: .03em; }
-
-/* MOBILE */
-@media (max-width: 700px) {
-  nav { padding: 0 1.25rem; }
-  .nav-links { gap: .9rem; }
-  .nav-links a { font-size: 11px; }
-  .hero { padding: 3rem 1.5rem 2.5rem; }
-  .section { padding: 2rem 1.5rem; }
-  .currently-grid, .about-grid, .lj-hero, .services-grid, .writing-grid, .contact-wrap, .threads, .pr-grid { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 6px; text-align: center; padding: 1.5rem; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <nav>
-  <a href="#" class="nav-name" onclick="show('home'); return false;">Jasmin Velez</a>
-  <ul class="nav-links">
-    <li><a href="#" onclick="show('home'); return false;" id="t-home" class="active">home</a></li>
-    <li><a href="#" onclick="show('about'); return false;" id="t-about">about</a></li>
-    <li><a href="#" onclick="show('raices'); return false;" id="t-raices">raíces</a></li>
-    <li><a href="#" onclick="show('land'); return false;" id="t-land">land & roots</a></li>
-    <li><a href="#" onclick="show('writing'); return false;" id="t-writing">writing</a></li>
-    <li><a href="#" onclick="show('contact'); return false;" id="t-contact">contact</a></li>
-  </ul>
+  <div class="wrap">
+    <a href="index.html" class="logo">Jasmin <span>Vélez</span></a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">Menu</button>
+    <ul class="links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="work-with-me.html">Work with me</a></li>
+    </ul>
+  </div>
 </nav>
 
-<!-- HOME -->
-<div id="p-home" class="page active">
-  <div class="hero">
-    <p class="hero-location">Somewhere in between Lenapehoking & Borikén.</p>
-    <h1>Practitioner-scholar rooted in <em class="em-fox">decolonial practice</em>,<br>working toward <em class="em-terra">land justice</em> & communities that get to stay</h1>
-    <p class="hero-bio">I am a Puerto Rican community organizer, nonprofit fundraiser, and doctoral researcher building toward futures where communities stay, thrive, and determine their own destinies on their own land.<br><em>Before you expand, you tend the roots.</em></p>
-    <div class="pill-row">
-      <span class="pill pill-green">Land Sovereignty</span>
-      <span class="pill pill-fox">(Decolonize)Academia</span>
-      <span class="pill pill-fox">Practitioner-Scholar</span>
-      <span class="pill pill-terra">Kensington Corridor Trust</span>
-      <span class="pill pill-green">Raíces Consulting</span>
+<main id="main">
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Somewhere in between Lenapehoking &amp; Borikén</span>
+      <h1>De la tierra <em>venimos.</em></h1>
+      <p class="lede">A practitioner-scholar working where land, memory, and justice meet, between Philadelphia and Puerto Rico.</p>
+      <div class="btns">
+        <a href="research.html" class="btn primary">See my research</a>
+        <a href="work-with-me.html" class="btn">Work with me</a>
+      </div>
     </div>
-    <div class="cta-row">
-      <button class="btn btn-moss" onclick="show('about')">ABOUT ME</button>
-      <button class="btn btn-outline-moss" onclick="show('raices')">CONSULTING</button>
-      <button class="btn btn-outline-fox" onclick="show('land')">LAND & ROOTS</button>
+    <div class="portrait">
+      <img src="aboutme.JPG" alt="Portrait of Jasmin Vélez">
     </div>
   </div>
-  <div class="section">
-    <p class="section-eyebrow">currently</p>
-    <div class="currently-grid">
-      <div class="currently-card terra">
-        <p class="card-label">organizing & fundraising</p>
-        <p class="card-role">Development & Communications Manager</p>
-        <p class="card-org">Kensington Corridor Trust</p>
-      </div>
-      <div class="currently-card fox">
-        <p class="card-label">consulting</p>
-        <p class="card-role">Founder & Principal Consultant</p>
-        <p class="card-org">Raíces Consulting LLC</p>
-      </div>
-      <div class="currently-card green">
-        <p class="card-label">research</p>
-        <p class="card-role">Doctoral Researcher</p>
-        <p class="card-org">Geography, Environment & Urban Studies · Temple University</p>
-      </div>
+</header>
+
+<section>
+  <div class="wrap two">
+    <div>
+      <span class="label">Bienvenidos</span>
+      <h2>About my work</h2>
+    </div>
+    <div class="prose">
+      <p>I'm a Puerto Rican practitioner-scholar raised in Puerto Rico and Kensington, Philadelphia. Across my research, organizing, and consulting, I keep coming back to the same question: what does it take for communities to stay, thrive, and shape their own futures on their own land?</p>
+      <p>I'm a doctoral researcher in Geography, Environment &amp; Urban Studies at Temple University, where I study displacement across the Puerto Rican diaspora. I've spent over a decade in community engagement, environmental justice, and land work in North Philadelphia, and through Raíces Consulting I partner with organizations on research, engagement, and storytelling.</p>
+      <a href="about.html" class="btn">More about me</a>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ABOUT -->
-<div id="p-about" class="page">
-  <div class="section">
-    <p class="section-eyebrow">about</p>
-    <div class="about-grid">
-            <div class="about-text">
-        <p>Jasmin Vélez is a Puerto Rican practitioner-scholar, organizer, and researcher rooted in Kensington, Philadelphia. Her work asks a single question in many forms: <em>what does it look like for communities to stay, thrive, and determine their own futures on their own land?</em></p>
-        <p>She is Development & Communications Manager at Kensington Corridor Trust, Philadelphia's first neighborhood trust, which moves commercial property into community hands along Kensington Avenue.</p>
-        <p>As principal of Raíces Consulting LLC, she partners with land trusts, community organizations, cultural institutions, and funders on community-based research, oral history and archival projects, engagement design, and bilingual storytelling.</p>
-        <p>Jasmin is a PhD candidate in Geography, Environment & Urban Studies at Temple University. Her dissertation follows Puerto Ricans in Philadelphia and Puerto Rico through gentrification, displacement, and the <em>vaivén</em> of diaspora life.</p>
-        <p>She holds an M.A. in Medical Anthropology from the University of Colorado Denver, where she studied land and identity with multigenerational coffee-farming families in Puerto Rico.</p>
-        <p>Off the clock, she grows food as La Jardinera Boricua and writes <em>Tending the Roots</em>, a newsletter on land, memory, and the garden.</p>
-      </div>
-      <div class="photo-col">
-        <div class="photo-frame">
-          <img src="aboutme.JPG" alt="Jasmin Velez">
-        </div>
-        <div class="stat-lone">
-          <div class="snum">10+ Years</div>
-          <div class="slabel">of enaging communities & work in land and environmental justice projects</div>
-        </div>
-      </div>
+<section class="band-green">
+  <div class="wrap">
+    <p class="statement">My research looks at displacement in Puerto Rico and gentrification in Philadelphia <em>as connected processes.</em></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="label">Start here</span>
+    <h2>Explore my work</h2>
+    <div class="cards">
+      <a class="card" href="research.html">
+        <span class="tag">Research</span>
+        <h3>Displacement across the diaspora</h3>
+        <p>My dissertation looks at displacement in Puerto Rico and gentrification in Puerto Rican Philadelphia as interdependent processes.</p>
+        <span class="more">Read about my research →</span>
+      </a>
+      <a class="card" href="research.html#writing">
+        <span class="tag">Writing</span>
+        <h3>Gentrification in Kensington</h3>
+        <p>An essay on what happens to a neighborhood when its changes are shaped by people outside the community.</p>
+        <span class="more">Writing and talks →</span>
+      </a>
+      <a class="card" href="work-with-me.html">
+        <span class="tag">Raíces Consulting</span>
+        <h3>Research, engagement, storytelling</h3>
+        <p>Project-based research, engagement, and communications for organizations working on land, community, and justice.</p>
+        <span class="more">Work with me →</span>
+      </a>
     </div>
   </div>
-</div>
+</section>
 
-<!-- RAÍCES -->
-<div id="p-raices" class="page">
-  <div class="section">
-    <p class="section-eyebrow">consulting</p>
-    <div class="raices-banner">
-      <h2>Raíces Consulting</h2>
-      <p class="raices-tagline">Plant with intention. Grow with community.</p>
-      <p class="raices-desc">A research and storytelling studio for mission-driven organizations working where land, community, and justice meet. We address the roots before we expand the branches.</p>
-    </div>
-    <div class="services-grid">
-      <div class="svc-card">
-        <p class="svc-tier">Rooting</p>
-        <p class="svc-name">Research & Archives</p>
-        <p class="svc-desc">Oral histories, place and land histories, storymaps, and community archives that keep knowledge with the people who hold it.</p>
-      </div>
-      <div class="svc-card">
-        <p class="svc-tier">Pollinating</p>
-        <p class="svc-name"> Engagement Design</p>
-        <p class="svc-desc">I design the process, and your team leads it: power and asset mapping, facilitation guides, and workshops that grow your own leaders.</p>
-      </div>
-      <div class="svc-card">
-        <p class="svc-tier">Blooming</p>
-        <p class="svc-name">Communications</p>
-        <p class="svc-desc">Bilingual stories, reports, and materials that turn research into something people act on.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- LAND & ROOTS -->
-<div id="p-land" class="page">
-  <div class="section">
-    <p class="section-eyebrow">land & roots</p>
-    <div class="lj-hero">
-      <div>
-        <p class="lj-opening">I have always loved growing things.<br>The work taught me what I was doing.</p>
-        <div class="lj-body">
-          <p>Growing was never something I came to; I truly believe it was already in me. What the organizing work gave me was language for what I had always known: that to tend a garden is an act of <b>resistance</b>, of care, of joy, of history, of culture. Of refusal and abundance at the same time.</p>
-          <p>La Jardinera Boricua is my ongoing account of that relationship — learning to grow, to save seeds, to cook from what the soil gives, to understand the land not as a concept but as something you know in your hands and your body. It started in a row home in Kensington, in containers on a stoop, in every inch of space I could find. It is still becoming.</p>
-          <p><em>This is not a credential. It is a practice. And the learning is ongoing.</em></p>
-        </div>
-      </div>
-      <div>
-                <div class="insta-card">
-          <div class="insta-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#27500A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#27500A" stroke="none"/></svg>
-          </div>
-          <p class="insta-name">La Jardinera Boricua</p>
-          <p class="insta-handle">@lajardineraboricua</p>
-          <p class="insta-desc">Growing things. Saving seeds. Cooking from the garden.<br>Learning what it means to tend the land as a Puerto Rican woman.</p>
-          <a href="https://instagram.com/lajardineraboricua" target="_blank" class="insta-btn">follow along</a>
-        </div>
-      </div>
-    </div>    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:2.5rem; align-items:start;">
-      <div class="garden-photo">
-        <img src="garden.jpg" alt="garden">
-      </div>
-      <div style="display:flex; flex-direction:column; gap:14px;">
-        <div class="thread green">
-          <p class="thread-tag">seed saving</p>
-          <p class="thread-title">Keeping the lineage alive</p>
-          <p class="thread-body">Saving seeds is an act of memory. Every tomato, every pepper, every flower returned to envelope is a small refusal of dependence — and a bet on next season.</p>
-        </div>
-        <div class="thread terra">
-          <p class="thread-tag">cooking from the garden</p>
-          <p class="thread-title">From soil to table</p>
-          <p class="thread-body">Growing what you eat changes your relationship to food, to labor, to abundance and scarcity. The kitchen is part of the garden. They are not separate rooms.</p>
-        </div>
-        <div class="thread fox">
-          <p class="thread-tag">environmental justice</p>
-          <p class="thread-title">Why growing is political</p>
-          <p class="thread-body">Access to land, clean soil, seeds, and space to grow are environmental justice issues. The garden is not separate from the research. It is the research, lived.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="pull-bar">
-      <p>"Growing was never something I came to — it was already in me. What the organizing work gave me was language for what I had always known: that to tend a garden is an act of resistance, of care, of joy, of history, of culture. <em>Of refusal and abundance at the same time.</em>"</p>
-    </div>
-
-    <div class="pr-section">
-      <div class="pr-grid">
-        <div>
-          <p class="pr-label">where it deepened</p>
-          <p class="pr-title">Puerto Rico & the coffee farmers</p>
-          <div class="pr-body">
-            <p>Before I had my own garden, I spent time in Puerto Rico with multigenerational coffee farming families — listening to how they talked about land, labor, and identity across generations shaped by colonial dispossession. I was there as a researcher. I left as something else.</p>
-            <p>What those conversations gave me was an understanding that the relationship to land is never just agricultural. It is ancestral, political, and deeply personal — especially for Puerto Rican families for whom land has been taken, managed, and legislated by outside forces for over a century.</p>
-            <p><em>La Jardinera Boricua is, in part, my attempt to work that out in my own hands.</em></p>
-          </div>
-        </div>
-        <div class="pr-aside">
-          <p class="pr-aside-label">MA thesis</p>
-          <p class="pr-aside-title">Reimagining the Jíbaro: Postcolonial Identity in Puerto Rico and the Specialty Coffee Market</p>
-          <p class="pr-aside-body">15 interviews with multigenerational coffee farming families. University of Colorado Denver, 2017.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- WRITING -->
-<div id="p-writing" class="page">
-  <div class="section">
-    <p class="section-eyebrow">writing & public scholarship</p>
-    <div class="writing-grid">
-      <div class="writing-card">
-        <p class="writing-pub">Community Centric Fundraising</p>
-        <p class="writing-title">Gentrification: When neighborhood changes aren’t shaped by us and are no longer for us.</p>
-        <p class="writing-date">Public scholarship · Philadelphia</p>
-      </div>
-      <div class="writing-card">
-        <p class="writing-pub">Academic</p>
-        <p class="writing-title">Spatial Solidarties <b>at the</b> PRSA 2024 - <i>From History to Group Chats: Exploring Resistance Across Geographies & Space</i></p>
-        <p class="writing-date">Temple University · in progress</p>
-      </div>
-      <div class="writing-card green-accent">
-        <p class="writing-pub">Dissertation</p>
-        <p class="writing-title">Digital Archiving & Projects</p>
-        <p class="writing-date"><a href="https://muralarts.org/artworks/vamonos-pal-monte/"><i>Vámonos Pa'l Monte</i>  ("Let's go to the Mountain")</a><br>• Collaboration with the Mural Arts Program.<br>  » Deliverable: Resistance Slogans for Performance & <a href="https://storymaps.arcgis.com/stories/b8d7f4880a9e4d1db71c40e7a9cea85b">Storymap.</a></p>
-      </div>
-      <div class="writing-card">
-        <p class="writing-pub">Teaching</p>
-        <p class="writing-title">Sustainable Cities · Temple University</p>
-        <p class="writing-date">Instructor of record · asynchronous</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CONTACT -->
-<div id="p-contact" class="page">
-  <div class="section">
-    <p class="section-eyebrow">get in touch</p>
-    <div class="contact-wrap">
-      <div>
-        <p class="contact-intro">Let's connect.</p>
-        <p class="contact-sub">Whether you're interested in working together through Raíces, reaching out about research, or connecting around shared work in land justice and environmental equity — I'd love to hear from you.</p>
-        <div class="contact-links">
-          <a href="mailto:jasminvelezg@gmail.com" class="contact-link">
-            <span class="contact-dot" style="background:var(--moss-light);"></span>
-            jasminvelezg@gmail.com
-          </a>
-          <a href="https://linkedin.com/in/jasminvelez" target="_blank" class="contact-link">
-            <span class="contact-dot" style="background:var(--moss-light);"></span>
-            LinkedIn · Jasmin Velez
-          </a>
-          <a href="https://instagram.com/lajardineraboricua" target="_blank" class="contact-link">
-            <span class="contact-dot" style="background:var(--fox);"></span>
-            @lajardineraboricua · La Jardinera Boricua
-          </a>
-          <span class="contact-link">
-            <span class="contact-dot" style="background:var(--terra-mid);"></span>
-            Philadelphia, PA
-          </span>
-        </div>
-        <div class="cv-note-box">
-          <strong>Academic CV available on request.</strong> Reaching out about fellowship applications, academic collaborations, or research partnerships? I'm happy to share my full CV — just drop me a note.
-        </div>
-      </div>
-      <div class="contact-aside">
-        <p class="contact-aside-head">Raíces Consulting</p>
-        <p class="contact-aside-sub">Plant with intention. Grow with community.</p>
-        <p>Available for research, archival, engagement design, and communications projects. Sliding scale available for grassroots organizations.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="subscribe-bar">
-  <h2>Tending the Roots</h2>
-  <p>Writing on land justice, environmental equity, and decolonial community practice — alongside dispatches from the garden: seed saving, cooking from the soil, and the ongoing work of understanding what it means to tend something.</p>
-  <a href="https://tendingtheroots.substack.com" target="_blank" class="subscribe-btn">subscribe to the newsletter</a>
-  <p class="subscribe-tagline">the roots come first. everything else follows.</p>
-</div>
+</main>
 
 <footer>
-  <span class="footer-name">Jasmin Velez</span>
-  <span class="footer-note">tending the roots · Philadelphia, PA</span>
+  <div class="wrap">
+    <div>
+      <div class="logo">Jasmin Vélez</div>
+      <p>Practitioner-scholar, organizer, and founder of Raíces Consulting. Based in Kensington, Philadelphia.</p>
+    </div>
+    <ul>
+      <li><a href="mailto:jasminvelezg@gmail.com">jasminvelezg@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/jasminvelez/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      <li><a href="mailto:jasminvelezg@gmail.com?subject=CV%20request">CV available by request</a></li>
+    </ul>
+    <div class="fine">© <span class="yr-now"></span> Jasmin Vélez · Philadelphia, PA</div>
+  </div>
 </footer>
 
 <script>
-function show(name) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  document.getElementById('p-' + name).classList.add('active');
-  document.getElementById('t-' + name).classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+  document.querySelectorAll('.yr-now').forEach(e => e.textContent = new Date().getFullYear());
+  const btn = document.querySelector('.menu-btn'), links = document.querySelector('.links');
+  btn.addEventListener('click', () => { const open = links.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
 </script>
 </body>
 </html>
